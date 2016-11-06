@@ -174,8 +174,10 @@ function Trainer:learningRate(epoch)
    local decay = 0
    if self.opt.dataset == 'imagenet' then
       decay = math.floor((epoch - 1) / 30)
-   elseif self.opt.dataset == 'cifar10' or self.opt.dataset == 'cifar100' or self.opt.dataset == 'tiny-imagenet' then
-      decay = epoch > self.opt.lrDrop2*self.opt.nEpochs and 2 or epoch > self.opt.lrDrop1*self.opt.nEpochs and 1 or 0
+   elseif self.opt.dataset == 'cifar10' then
+      decay = epoch >= 122 and 2 or epoch >= 81 and 1 or 0
+   elseif self.opt.dataset == 'cifar100' then
+      decay = epoch >= 122 and 2 or epoch >= 81 and 1 or 0
    end
    return self.opt.LR * math.pow(0.1, decay)
 end
@@ -184,10 +186,8 @@ function Trainer:learningRateCosine(epoch, iter, nBatches)
    local nEpochs_sub =  torch.floor(self.opt.nEpochs / self.opt.nCycles)
    local nEpochs_last =  self.opt.nEpochs - (self.opt.nCycles - 1) * nEpochs_sub
    local nEpochs_cur = (epoch >  (self.opt.nCycles - 1) * nEpochs_sub) and nEpochs_last or nEpochs_sub
-
    local T_total = nEpochs_cur * nBatches
    local T_cur = ((epoch-1) % nEpochs_cur) * nBatches + iter
-   
    return 0.5 * self.opt.LR * (1 + torch.cos(math.pi * T_cur / T_total))
 end
 
