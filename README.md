@@ -1,5 +1,5 @@
-# Snapshot Ensemble: Train 1, Get M for Free
-This repository contains the code for the paper [Snapshot Ensemble: Train 1, Get M for Free](http://openreview.net/pdf?id=BJYwwY9ll). 
+# Snapshot Ensembles: Train 1, Get M for Free
+This repository contains the code for the paper [Snapshot Ensembles: Train 1, Get M for Free](http://openreview.net/pdf?id=BJYwwY9ll). 
 
 
 The code is based on fb.resnet.torch by Facebook (https://github.com/facebook/fb.resnet.torch).
