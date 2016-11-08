@@ -31,7 +31,8 @@ take a snapshot at each minimum for test time ensembling.
   
 3. An example command to train a Snapshot Ensemble with ResNet-110 (B = 200 epochs, M = 5 cycles, Initial learning rate alpha = 0.2) on CIFAR-100:
 
-```th main.lua -netType resnet -depth 110 -dataset cifar100 -batchSize 64 -nEpochs 200 -lrShape cosine -nCycles 5 -LR 0.2 -save checkpoints/```
+ ```th main.lua -netType resnet -depth 110 -dataset cifar100 -batchSize 64 -nEpochs 200 -lrShape cosine -nCycles 5 -LR 0.2 -save      
+ checkpoints/```
 
 
 ##Contact
