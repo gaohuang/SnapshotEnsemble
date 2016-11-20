@@ -171,13 +171,14 @@ end
 
 function Trainer:learningRate(epoch)
    -- Training schedule
+   local nEpochs_sub =  torch.floor(self.opt.nEpochs / self.opt.nCycles)
+   local nEpochs_last =  self.opt.nEpochs - (self.opt.nCycles - 1) * nEpochs_sub
+   local nEpochs_cur = (epoch >  (self.opt.nCycles - 1) * nEpochs_sub) and nEpochs_last or nEpochs_sub
    local decay = 0
    if self.opt.dataset == 'imagenet' then
-      decay = math.floor((epoch - 1) / 30)
-   elseif self.opt.dataset == 'cifar10' then
-      decay = epoch >= 122 and 2 or epoch >= 81 and 1 or 0
-   elseif self.opt.dataset == 'cifar100' then
-      decay = epoch >= 122 and 2 or epoch >= 81 and 1 or 0
+      decay = math.floor((epoch - 1) / nEpochs_cur * 3)
+   else
+      decay = epoch >= 0.75*nEpochs_cur and 2 or epoch >= 0.5*nEpochs_cur and 1 or 0
    end
    return self.opt.LR * math.pow(0.1, decay)
 end
