@@ -1,5 +1,5 @@
-# Snapshot Ensemble: Train 1, Get M for Free
-This repository contains the code for the paper [Snapshot Ensemble: Train 1, Get M for Free](http://openreview.net/pdf?id=BJYwwY9ll). 
+# Snapshot Ensembles: Train 1, Get M for Free
+This repository contains the code for the paper [Snapshot Ensembles: Train 1, Get M for Free](http://openreview.net/pdf?id=BJYwwY9ll). 
 
 
 The code is based on fb.resnet.torch by Facebook (https://github.com/facebook/fb.resnet.torch).
@@ -29,9 +29,10 @@ take a snapshot at each minimum for test time ensembling.
   ```cmd:option('-lrShape',    'multistep',   'learning rate annealing function, multistep or cosine')```
   ```cmd:option('-nCycles',    '1',           'number of learning rate annealing cycles')```
   
-3. An example command to train a Snapshot Ensemble with ResNet-110 (B = 200 epochs, M = 5 cycles, Initial learning rate alpha = 0.1) on CIFAR-100:
+3. An example command to train a Snapshot Ensemble with ResNet-110 (B = 200 epochs, M = 5 cycles, Initial learning rate alpha = 0.2) on CIFAR-100:
 
-```th main.lua -netType resnet -depth 110 -dataset cifar100 -batchSize 64 -nEpochs 200 -lrShape cosine -nCycles 5 -LR 0.1 -save checkpoints/```
+ ```th main.lua -netType resnet -depth 110 -dataset cifar100 -batchSize 64 -nEpochs 200 -lrShape cosine -nCycles 5 -LR 0.2 -save      
+ checkpoints/```
 
 
 ##Contact
