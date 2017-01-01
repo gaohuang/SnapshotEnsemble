@@ -30,7 +30,7 @@ take a snapshot at each minimum for test time ensembling.
 
 
 ##Contact
-gh349 at cornell.edu   
+[gh349, yl2363]  at cornell.edu   
 Any discussions, suggestions and questions are welcome!
 
 
