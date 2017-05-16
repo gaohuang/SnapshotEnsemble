@@ -1,9 +1,9 @@
 # Snapshot Ensembles: Train 1, Get M for Free
-This repository contains the code for the paper [Snapshot Ensembles: Train 1, Get M for Free](https://arxiv.org/abs/1704.00109). 
+This repository contains the Torch code for the paper [Snapshot Ensembles: Train 1, Get M for Free](https://arxiv.org/abs/1704.00109). 
 
+The code is based on [fb.resnet.torch](https://github.com/facebook/fb.resnet.torch) by [Facebook](https://github.com/facebook) .
 
-The code is based on fb.resnet.torch by Facebook (https://github.com/facebook/fb.resnet.torch).
-
+There is also a nice [Keras implementation](https://github.com/titu1994/Snapshot-Ensembles) by [titu1994](https://github.com/titu1994).
 
 ## Table of Contents
 0. [Introduction](#intro)
